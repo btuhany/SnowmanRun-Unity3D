@@ -6,19 +6,24 @@ public class LineMovement : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
     PlayerController _playerController;
+    Rigidbody _rb;
+    
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        LineControl();
+            ChangeLine();
     }
 
-    void LineControl()
+    void ChangeLine()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _playerController.GetLine(), Time.deltaTime * _moveSpeed);
+          Vector3 pos = new Vector3 ( 0f,_rb.position.y, _rb.position.z );
+          _rb.position = Vector3.MoveTowards(_rb.position, pos + _playerController.GetLine(), Time.fixedDeltaTime * _moveSpeed);
     }
+    
+
 }
