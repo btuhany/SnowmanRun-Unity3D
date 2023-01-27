@@ -16,10 +16,10 @@ public class LineMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-            ChangeLine();    
+            GetInTheLine();    
     }
 
-    void ChangeLine()
+    void GetInTheLine()
     {
         Vector3 pos = new Vector3(0f, _rb.position.y, _rb.position.z);
         _rb.position = Vector3.MoveTowards(_rb.position, pos + _playerController.GetLine(), Time.fixedDeltaTime * _moveSpeed);

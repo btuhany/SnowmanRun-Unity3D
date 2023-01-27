@@ -29,7 +29,7 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Jump"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""f36a992e-1f9e-4f06-9e07-676aca39c99c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -56,7 +56,7 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""MoveDown"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""000b1a63-c41d-4ae8-bb56-efecbcbadc52"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
