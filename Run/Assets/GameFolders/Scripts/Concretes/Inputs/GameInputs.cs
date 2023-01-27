@@ -29,8 +29,35 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Jump"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""f36a992e-1f9e-4f06-9e07-676aca39c99c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""251bb759-85ca-4ffc-a49c-23cefa2a35b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""76afb570-2256-456e-a111-ad07efbe038b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveDown"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""000b1a63-c41d-4ae8-bb56-efecbcbadc52"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,6 +75,72 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e6a8ca0-adc3-4353-99c2-5dfc436d03dc"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b7248ab-f995-48bb-8e14-008917e74f46"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a201e724-96ea-4bd1-89f2-ce188eec6c6c"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""599ff331-18b0-4d4f-bd27-06c91e6117b6"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ba8c856-0279-4488-ba21-9e78def65cec"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7960deea-323c-4b07-a759-a677a87210a6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +150,9 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
         // PlayerOnGround
         m_PlayerOnGround = asset.FindActionMap("PlayerOnGround", throwIfNotFound: true);
         m_PlayerOnGround_Jump = m_PlayerOnGround.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerOnGround_MoveRight = m_PlayerOnGround.FindAction("MoveRight", throwIfNotFound: true);
+        m_PlayerOnGround_MoveLeft = m_PlayerOnGround.FindAction("MoveLeft", throwIfNotFound: true);
+        m_PlayerOnGround_MoveDown = m_PlayerOnGround.FindAction("MoveDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +213,17 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerOnGround;
     private IPlayerOnGroundActions m_PlayerOnGroundActionsCallbackInterface;
     private readonly InputAction m_PlayerOnGround_Jump;
+    private readonly InputAction m_PlayerOnGround_MoveRight;
+    private readonly InputAction m_PlayerOnGround_MoveLeft;
+    private readonly InputAction m_PlayerOnGround_MoveDown;
     public struct PlayerOnGroundActions
     {
         private @GameInputs m_Wrapper;
         public PlayerOnGroundActions(@GameInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_PlayerOnGround_Jump;
+        public InputAction @MoveRight => m_Wrapper.m_PlayerOnGround_MoveRight;
+        public InputAction @MoveLeft => m_Wrapper.m_PlayerOnGround_MoveLeft;
+        public InputAction @MoveDown => m_Wrapper.m_PlayerOnGround_MoveDown;
         public InputActionMap Get() { return m_Wrapper.m_PlayerOnGround; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +236,15 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnJump;
+                @MoveRight.started -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveRight;
+                @MoveRight.performed -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveRight;
+                @MoveRight.canceled -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveRight;
+                @MoveLeft.started -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.performed -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.canceled -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveLeft;
+                @MoveDown.started -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveDown;
+                @MoveDown.performed -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveDown;
+                @MoveDown.canceled -= m_Wrapper.m_PlayerOnGroundActionsCallbackInterface.OnMoveDown;
             }
             m_Wrapper.m_PlayerOnGroundActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +252,15 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @MoveRight.started += instance.OnMoveRight;
+                @MoveRight.performed += instance.OnMoveRight;
+                @MoveRight.canceled += instance.OnMoveRight;
+                @MoveLeft.started += instance.OnMoveLeft;
+                @MoveLeft.performed += instance.OnMoveLeft;
+                @MoveLeft.canceled += instance.OnMoveLeft;
+                @MoveDown.started += instance.OnMoveDown;
+                @MoveDown.performed += instance.OnMoveDown;
+                @MoveDown.canceled += instance.OnMoveDown;
             }
         }
     }
@@ -148,5 +268,8 @@ public partial class @GameInputs : IInputActionCollection2, IDisposable
     public interface IPlayerOnGroundActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
+        void OnMoveLeft(InputAction.CallbackContext context);
+        void OnMoveDown(InputAction.CallbackContext context);
     }
 }

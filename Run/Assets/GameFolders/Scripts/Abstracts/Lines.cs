@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Lines : MonoBehaviour
 {
     const float _lineDistance = 4.5f;
-    protected Vector3 line;
+    private Vector3 line;
+
     private Vector3[] lines = 
     {
         Vector3.left*_lineDistance,
@@ -13,19 +14,25 @@ public abstract class Lines : MonoBehaviour
         Vector3.right*_lineDistance,
     };
 
+    protected bool IsInLine { get => transform.position.x == GetLine().x; }
+
     protected void LineIncrease()
     {
+        
         if (GetLineNumber() == 2)
             return;
         else
-            line = lines[GetLineNumber() + 1];       
+            line = lines[GetLineNumber() + 1];
+       
     }
     protected void LineDecrease()
     {
+       
         if (GetLineNumber() == 0)
             return;
         else
             line = lines[GetLineNumber() - 1];
+    
     }
 
     public int GetLineNumber()
@@ -58,6 +65,7 @@ public abstract class Lines : MonoBehaviour
             return lines[2];
         }
     }
+  
     protected void SetLine(int newLine)
     {
         if (newLine > 2 || newLine < 0)

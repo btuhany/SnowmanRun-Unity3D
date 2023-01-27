@@ -9,8 +9,11 @@ public class PlayerController : Lines
     [SerializeField] float jumpForce;
     RbMovement _move;
     InputReader _input;
+  //  bool _isOnGround;
     bool _jumped;
-    bool _groundPound;
+   // bool _groundPound;
+
+    bool moveRight;
     private void Awake()
     {
         _move = new RbMovement(this);
@@ -18,13 +21,23 @@ public class PlayerController : Lines
     }
     private void Start()
     {
+       // _isOnGround = true;
         SetLine(1);
     }
 
     void Update()
     {
         HandleInputs();
-        Debug.Log(_input.Jump);
+        if(IsInLine)
+        {
+            HandleLineInputs();   //Player can hold the button and change line
+                                  
+        }
+        else
+        {
+            HandleInGapInputs(); //Player can hold the button and change line
+                                 //while also cancel or adjust the line change action.
+        }
     }
     private void FixedUpdate()
     {
@@ -33,31 +46,48 @@ public class PlayerController : Lines
             _move.Jump(jumpForce);
             _jumped = false;
         }
-        if (_groundPound)
-        {
-            _move.GroundPound(jumpForce);
-            _groundPound= false;
-        }
     }
     private void HandleInputs()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow)) 
+        if (_input.Jump)
         {
-            LineIncrease();
+            _jumped = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            LineDecrease();
-        }
-        //if(_input.Jump==1 && !_jumped)
-        //{
-        //    _jumped = true;
-        //}
-        Debug.Log(_input.Jump);
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+    }
+    private void HandleLineInputs()
+    {
+        if (_input.MoveRight && !_input.MoveLeft)
         {
-            _groundPound = true;
+            MoveRight();
+        }
+        else if (_input.MoveLeft && !_input.MoveRight)
+        {
+            MoveLeft();
         }
     }
+    private void HandleInGapInputs()
+    {
+        if (_input.MoveRight && !_input.MoveLeft && !moveRight)
+        {
+            MoveRight();
+        }
+        if (_input.MoveLeft && !_input.MoveRight && moveRight)
+        {
+            MoveLeft();
+        }
+    }
+    private void MoveRight()
+    {
+        LineIncrease();
+        moveRight = true;
+        return;
+    }
+    private void MoveLeft()
+    {
+        LineDecrease();
+        moveRight = false;
+        return;
+    }
+    
 }
