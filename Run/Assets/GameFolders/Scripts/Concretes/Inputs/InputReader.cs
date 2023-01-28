@@ -14,7 +14,7 @@ public class InputReader
     public InputReader(PlayerInput playerInput)
 	{
 		_playerInput = playerInput;
-        _playerInput.currentActionMap.actions[0].performed += OnJump;
+        _playerInput.currentActionMap.actions[0].started += OnJump;
         _playerInput.currentActionMap.actions[0].canceled += OnJump;
         // _playerInput.currentActionMap.actions[1].performed += OnMoveRight;
         _playerInput.currentActionMap.actions[1].performed+= OnMoveRight;

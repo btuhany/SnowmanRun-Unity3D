@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Lines : MonoBehaviour
 {
-    const float _lineDistance = 3.5f;
+    const float _lineDistance = 5f;
     private Vector3 line;
 
-    private Vector3[] lines = 
+    protected Vector3[] lines = 
     {
         Vector3.left*_lineDistance,
         Vector3.zero,
@@ -72,5 +72,8 @@ public abstract class Lines : MonoBehaviour
             return;
         line = lines[newLine];
     }
-
+    protected void GetInTheLine(int lineNumber)
+    {
+        transform.position = new Vector3(lines[lineNumber].x,transform.position.y,transform.position.z);
+    }
 }

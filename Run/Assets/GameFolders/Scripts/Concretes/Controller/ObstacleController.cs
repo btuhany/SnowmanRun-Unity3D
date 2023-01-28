@@ -21,7 +21,7 @@ public class ObstacleController : MonoBehaviour
             _currentLifeTime = 0f;
             Destroy(this.gameObject);
         }
-        if (transform.position.z < -1f)
+        if (transform.position.z < -5f)
         {
             Destroy(this.gameObject);
         }

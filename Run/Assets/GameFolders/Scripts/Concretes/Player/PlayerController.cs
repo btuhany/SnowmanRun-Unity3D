@@ -33,14 +33,14 @@ public class PlayerController : Lines
         if(IsInLine)
         {
             HandleLineInputs();   //Player can hold the button and change line
-
+           
         }
         else
         {
             HandleInGapInputs(); //Player can hold the button and change line
-                                 //while also cancel or adjust the line change action.
+                             //while also cancel or adjust the line change action.
         }
-
+        Debug.Log(IsInLine);
     }
     private void FixedUpdate()
     {
@@ -55,6 +55,7 @@ public class PlayerController : Lines
         if(_moveDown)
         {
             _move.GroundPound(jumpForce);
+            
             _moveDown = false;
         }
     }
@@ -66,12 +67,12 @@ public class PlayerController : Lines
         }
         if(_input.MoveDown)
         {
-            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            //transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             _moveDown = true;
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+           //transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
 
     }
@@ -80,10 +81,12 @@ public class PlayerController : Lines
         if (_input.MoveRight && !_input.MoveLeft)
         {
             MoveRight();
+            Debug.Log("RightLineInput");
         }
         else if (_input.MoveLeft && !_input.MoveRight)
         {
             MoveLeft();
+            Debug.Log("LeftLineInput");
         }
     }
     private void HandleInGapInputs()
@@ -91,10 +94,12 @@ public class PlayerController : Lines
         if (_input.MoveRight && !_input.MoveLeft && !moveRight)
         {
             MoveRight();
+            Debug.Log("RightGapInput");
         }
         if (_input.MoveLeft && !_input.MoveRight && moveRight)
         {
             MoveLeft();
+            Debug.Log("LeftGapInput");
         }
     }
     private void MoveRight()
