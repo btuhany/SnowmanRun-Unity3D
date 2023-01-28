@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : Lines
 {
     [SerializeField] float jumpForce;
-    RbMovement _move;
+    AirMovement _move;
     InputReader _input;
     
     bool _jumped;
@@ -18,7 +18,7 @@ public class PlayerController : Lines
     bool moveRight;
     private void Awake()
     {
-        _move = new RbMovement(this);
+        _move = new AirMovement(this);
         _input = new InputReader(GetComponent<PlayerInput>());
     }
     private void Start()
@@ -49,6 +49,7 @@ public class PlayerController : Lines
         {
             _move.Jump(jumpForce);
             _jumped = false;
+            _moveDown = false;    //priority for jump
             
         }
         if(_moveDown)

@@ -14,19 +14,20 @@ public class InputReader
     public InputReader(PlayerInput playerInput)
 	{
 		_playerInput = playerInput;
-        _playerInput.currentActionMap.actions[0].started += OnJump;
+        _playerInput.currentActionMap.actions[0].performed += OnJump;
         _playerInput.currentActionMap.actions[0].canceled += OnJump;
         // _playerInput.currentActionMap.actions[1].performed += OnMoveRight;
-        _playerInput.currentActionMap.actions[1].started+= OnMoveRight;
+        _playerInput.currentActionMap.actions[1].performed+= OnMoveRight;
         _playerInput.currentActionMap.actions[1].canceled+= OnMoveRight;
 
         //_playerInput.currentActionMap.actions[2].performed += OnMoveLeft;
-        _playerInput.currentActionMap.actions[2].started += OnMoveLeft;
+        _playerInput.currentActionMap.actions[2].performed += OnMoveLeft;
         _playerInput.currentActionMap.actions[2].canceled += OnMoveLeft;
 
-        _playerInput.currentActionMap.actions[3].started += OnMoveDown;
+        _playerInput.currentActionMap.actions[3].performed += OnMoveDown;
         _playerInput.currentActionMap.actions[3].canceled += OnMoveDown;
     }
+
 
     private void OnMoveDown(InputAction.CallbackContext context)
     {

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RbMovement   // VerticalMovement?
+public class AirMovement   // VerticalMovement?
 {
     Rigidbody _rigidbody;
-    public RbMovement(PlayerController player)
+    public AirMovement(PlayerController player)
     {
         _rigidbody = player.GetComponent<Rigidbody>();
     }
