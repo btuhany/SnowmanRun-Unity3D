@@ -5,15 +5,30 @@ using UnityEngine;
 public class ObstacleController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
+    [SerializeField] private float _maxLifeTime;
+    VerticalMover _move;
+    public float _currentLifeTime;
 
-    Rigidbody _rb;
     private void Awake()
     {
-        _rb = GetComponentInChildren<Rigidbody>();
+        _move = new VerticalMover(this.gameObject);
     }
-    void Update()
+    private void Update()
     {
-        transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+        _currentLifeTime += Time.deltaTime;
+        if(_currentLifeTime>_maxLifeTime)
+        {
+            _currentLifeTime = 0f;
+            Destroy(this.gameObject);
+        }
+        if (transform.position.z < -1f)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    private void FixedUpdate()
+    {
+        _move.FixedTick(moveSpeed);
     }
 
 }
