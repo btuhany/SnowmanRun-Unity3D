@@ -14,7 +14,7 @@ public class PlayerController : Lines
 
     bool _jumped;
     bool _moveDown;
-    bool moveRight;   //prevents line increasing while moving between lines + also player can cancel the line movement.
+    bool _moveRight;   //prevents line increasing while moving between lines + also player can cancel the line movement.
     private bool _isDead = false;
 
     private void Awake()
@@ -23,7 +23,7 @@ public class PlayerController : Lines
         _input = new InputReader(GetComponent<PlayerInput>());
         _anim = GetComponentInChildren<Animator>();
     }
-    private void Start()
+    private void OnEnable()
     {
         SetLine(1);
     }
@@ -32,19 +32,9 @@ public class PlayerController : Lines
     {
         if (_isDead) return;
         HandleInputs();
-        //if (IsInLine)
-        //{
-        //    HandleLineInputs();     //Player can hold the button and change line
-        //}
-        //else
-        {
-            HandleInGapInputs();    //Player can hold the button and change line
-                                    //while also cancel or adjust the line change action.
-        }
     }
     private void FixedUpdate()
     {
-
         if (_jumped)
         {
             _move.Jump(jumpForce);
@@ -55,7 +45,6 @@ public class PlayerController : Lines
         if (_moveDown)
         {
             _move.GroundPound(jumpForce);
-
             _moveDown = false;
         }
     }
@@ -69,6 +58,14 @@ public class PlayerController : Lines
     }
     private void HandleInputs()
     {
+        if (_input.MoveRight && !_input.MoveLeft)
+        {
+            MoveRight();
+        }
+        if (_input.MoveLeft && !_input.MoveRight)
+        {
+            MoveLeft();
+        }
         if (_input.Jump)
         {
             _jumped = true;
@@ -80,41 +77,21 @@ public class PlayerController : Lines
 
 
     }
-    private void HandleLineInputs()
-    {
-        if (_input.MoveRight && !_input.MoveLeft)
-        {
-            MoveRight();
-
-        }
-        else if (_input.MoveLeft && !_input.MoveRight)
-        {
-            MoveLeft();
-
-        }
-    }
-    private void HandleInGapInputs() //prevents line increasing while moving between lines + also player can cancel the line movement.
-    {
-        if (_input.MoveRight && !_input.MoveLeft && !moveRight)
-        {
-            MoveRight();
-        }
-        if (_input.MoveLeft && !_input.MoveRight && moveRight)
-        {
-            MoveLeft();
-        }
-    }
     private void MoveRight()
     {
-
-        LineIncrease();
-        moveRight = true;
+        if (IsInLine || !_moveRight)
+        {
+            LineIncrease();
+            _moveRight = true;
+        }
     }
     private void MoveLeft()
     {
-        LineDecrease();
-
-        moveRight = false;
+        if (IsInLine || _moveRight)
+        {
+            LineDecrease();
+            _moveRight = false;
+        }      
     }
 
 }
