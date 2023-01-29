@@ -16,6 +16,8 @@ public class PlayerController : Lines
    // bool _groundPound;
 
     bool moveRight;
+    private bool _isDead = false;
+
     private void Awake()
     {
         _move = new AirMovement(this);
@@ -29,6 +31,7 @@ public class PlayerController : Lines
 
     void Update()
     {
+        if (_isDead) return;
         HandleInputs();
         if(IsInLine)
         {
@@ -57,6 +60,14 @@ public class PlayerController : Lines
             _move.GroundPound(jumpForce);
             
             _moveDown = false;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            _isDead=true;
+            GameManager.Instance.StopGame();
         }
     }
     private void HandleInputs()

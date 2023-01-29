@@ -30,5 +30,5 @@ public class ObstacleController : MonoBehaviour
     {
         _move.FixedTick(moveSpeed);
     }
-
+    
 }
