@@ -13,4 +13,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         Time.timeScale = 0;
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

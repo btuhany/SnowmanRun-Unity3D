@@ -10,22 +10,21 @@ public class PlayerController : Lines
     [SerializeField] float jumpForce;
     AirMovement _move;
     InputReader _input;
-    
+    Animator _anim;
+
     bool _jumped;
     bool _moveDown;
-   // bool _groundPound;
-
-    bool moveRight;
+    bool moveRight;   //prevents line increasing while moving between lines + also player can cancel the line movement.
     private bool _isDead = false;
 
     private void Awake()
     {
         _move = new AirMovement(this);
         _input = new InputReader(GetComponent<PlayerInput>());
+        _anim = GetComponentInChildren<Animator>();
     }
     private void Start()
     {
-        
         SetLine(1);
     }
 
@@ -33,32 +32,30 @@ public class PlayerController : Lines
     {
         if (_isDead) return;
         HandleInputs();
-        if(IsInLine)
+        //if (IsInLine)
+        //{
+        //    HandleLineInputs();     //Player can hold the button and change line
+        //}
+        //else
         {
-            HandleLineInputs();   //Player can hold the button and change line
-           
+            HandleInGapInputs();    //Player can hold the button and change line
+                                    //while also cancel or adjust the line change action.
         }
-        else
-        {
-            HandleInGapInputs(); //Player can hold the button and change line
-                             //while also cancel or adjust the line change action.
-        }
-        Debug.Log(IsInLine);
     }
     private void FixedUpdate()
     {
-        
-        if(_jumped)
+
+        if (_jumped)
         {
             _move.Jump(jumpForce);
             _jumped = false;
             _moveDown = false;    //priority for jump
-            
+
         }
-        if(_moveDown)
+        if (_moveDown)
         {
             _move.GroundPound(jumpForce);
-            
+
             _moveDown = false;
         }
     }
@@ -66,7 +63,7 @@ public class PlayerController : Lines
     {
         if (collision.gameObject.tag == "enemy")
         {
-            _isDead=true;
+            _isDead = true;
             GameManager.Instance.StopGame();
         }
     }
@@ -76,15 +73,11 @@ public class PlayerController : Lines
         {
             _jumped = true;
         }
-        if(_input.MoveDown)
+        if (_input.MoveDown)
         {
-            //transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             _moveDown = true;
         }
-        else
-        {
-           //transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        }
+
 
     }
     private void HandleLineInputs()
@@ -92,36 +85,36 @@ public class PlayerController : Lines
         if (_input.MoveRight && !_input.MoveLeft)
         {
             MoveRight();
-            Debug.Log("RightLineInput");
+
         }
         else if (_input.MoveLeft && !_input.MoveRight)
         {
             MoveLeft();
-            Debug.Log("LeftLineInput");
+
         }
     }
-    private void HandleInGapInputs()
+    private void HandleInGapInputs() //prevents line increasing while moving between lines + also player can cancel the line movement.
     {
         if (_input.MoveRight && !_input.MoveLeft && !moveRight)
         {
             MoveRight();
-            Debug.Log("RightGapInput");
         }
         if (_input.MoveLeft && !_input.MoveRight && moveRight)
         {
             MoveLeft();
-            Debug.Log("LeftGapInput");
         }
     }
     private void MoveRight()
     {
+
         LineIncrease();
         moveRight = true;
     }
     private void MoveLeft()
     {
         LineDecrease();
+
         moveRight = false;
     }
-    
+
 }

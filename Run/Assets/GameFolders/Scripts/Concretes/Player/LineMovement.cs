@@ -23,7 +23,6 @@ public class LineMovement : MonoBehaviour
     {
         Vector3 pos = new Vector3(0f, _rb.position.y, _rb.position.z);
         _rb.position = Vector3.MoveTowards(_rb.position, pos + _playerController.GetLine(), Time.fixedDeltaTime * _moveSpeed);
-
     }
 
     
