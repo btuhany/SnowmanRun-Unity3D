@@ -8,22 +8,23 @@ using UnityEngine.UI;
 public class PlayerController : Lines
 {
     [SerializeField] float jumpForce;
-    AirMovement _move;
+    Movement _move;
     InputReader _input;
     Animator _anim;
-    BoxCollider _collider;
+
 
     bool _jumped;
     bool _moveDown;
     bool _moveRight;   //prevents line increasing while moving between lines + also player can cancel the line movement.
     private bool _isDead = false;
 
+
     private void Awake()
     {
-        _move = new AirMovement(this);
+        _move = new Movement(this);
         _input = new InputReader(GetComponent<PlayerInput>());
         _anim = GetComponentInChildren<Animator>();
-        _collider = GetComponent<BoxCollider>();
+
     }
     private void OnEnable()
     {
@@ -39,6 +40,7 @@ public class PlayerController : Lines
             _anim.SetBool("IsOnGround", true);
             _anim.SetBool("IsFalling", false);
             _anim.SetBool("IsJumped", false);
+           
         }
         else if(_move.IsFalling)
         {
@@ -67,7 +69,6 @@ public class PlayerController : Lines
         {
             _move.GroundPound(jumpForce);
             _moveDown = false;
-            Debug.Log("moveDown");
         }
 
     }
@@ -97,10 +98,12 @@ public class PlayerController : Lines
         {
             _moveDown = true;
             _anim.SetBool("IsRolled",true);
+            _move.RollCollider(true);
         }     
         else
         {
-            if(_move.IsOnGround && !_jumped)
+            _move.RollCollider(false);
+            if (_move.IsOnGround && !_jumped)
             _anim.SetBool("IsRolled", false);
         }
     }
@@ -121,4 +124,5 @@ public class PlayerController : Lines
         }      
     }
 
+    
 }
