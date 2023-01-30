@@ -707,7 +707,6 @@ GameObject:
   - component: {fileID: 1239712001}
   - component: {fileID: 1239712003}
   - component: {fileID: 1239712008}
-  - component: {fileID: 1239712007}
   - component: {fileID: 1239712006}
   - component: {fileID: 1239711998}
   - component: {fileID: 1239712004}
@@ -818,22 +817,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7464166, y: 2.052506, z: 0.747897}
-  m_Center: {x: 0, y: 0.89, z: 0.04}
---- !u!136 &1239712007
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239711997}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.6251941
-  m_Height: 1.8449249
-  m_Direction: 1
-  m_Center: {x: -0.0046567917, y: 2.9425135, z: 0}
+  m_Size: {x: 1.7464166, y: 3.7746797, z: 0.747897}
+  m_Center: {x: 0, y: 1.7450783, z: 0.03999999}
 --- !u!114 &1239712008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b809420f058724eadcfe3026260641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colliderCooldown: 1
+  _colliderCooldown: 0.7
+  _jumpColliderCenter: {x: 0, y: 2.85, z: 0}
+  _jumpColliderSize: {x: 1.74, y: 1.55, z: 0.74}
+  _rollColliderCenter: {x: 0, y: 0.81, z: 0}
+  _rollColliderSize: {x: 1.74, y: 1.91, z: 0.74}
 --- !u!1 &1459502148
 GameObject:
   m_ObjectHideFlags: 0

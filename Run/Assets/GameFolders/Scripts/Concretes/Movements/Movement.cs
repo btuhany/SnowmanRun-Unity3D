@@ -6,15 +6,15 @@ using UnityEngine;
 public class Movement   // VerticalMovement?
 {
     Rigidbody _rigidbody;
-    ColliderManagment _collider;
+    ColliderManagement _collider;
 
     public Movement(PlayerController player)
     {
         _rigidbody = player.GetComponent<Rigidbody>();
-        _collider= player.GetComponent<ColliderManagment>();
+        _collider= player.GetComponent<ColliderManagement>();
 
     }
-    public bool IsOnGround { get =>  _rigidbody.position.y <0.14f; } //velocity control doesn't work because of the falling
+    public bool IsOnGround { get =>  _rigidbody.position.y <0.15f; } //velocity control doesn't work because it can also be zero and negative when falling
     public bool IsFalling { get => _rigidbody.velocity.y < 0f; }
     public void Jump(float force)
     {

@@ -39,7 +39,6 @@ public class PlayerController : Lines
         HandleInputs();
         if (_move.IsOnGround)
         {
-           
             _anim.SetBool("IsOnGround", true);
             _anim.SetBool("IsFalling", false);
             _anim.SetBool("IsJumped", false);
@@ -110,7 +109,7 @@ public class PlayerController : Lines
         else
         {
             if (_move.IsOnGround && !_jumped)
-            _anim.SetBool("IsRolled", false);
+                 _anim.SetBool("IsRolled", false);
         }
         
     }
