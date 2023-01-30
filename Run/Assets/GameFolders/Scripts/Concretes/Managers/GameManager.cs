@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+  
     void Awake()
     {
         SingletonThisObject(this);
@@ -17,4 +18,5 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         Application.Quit();
     }
+
 }
