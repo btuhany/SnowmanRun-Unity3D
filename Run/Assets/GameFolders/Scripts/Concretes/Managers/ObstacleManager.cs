@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleController : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] private float _maxLifeTime;
     VerticalMover _move;
-    public float _currentLifeTime;
+    private float _currentLifeTime;
 
     private void Awake()
     {

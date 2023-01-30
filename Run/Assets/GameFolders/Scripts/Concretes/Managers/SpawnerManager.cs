@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnerManager : Lines
 {
-    [SerializeField] ObstacleController _obstaclePrefab;
+    [SerializeField] ObstacleManager _obstaclePrefab;
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
     [SerializeField] [Range(0,2)] int _lineNumber;

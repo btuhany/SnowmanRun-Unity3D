@@ -77,14 +77,7 @@ public class PlayerController : Lines
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "enemy")
-        {
-            _isDead = true;
-            GameManager.Instance.StopGame();
-        }
-    }
+ 
     private void HandleInputs()
     {
         if (_input.MoveRight && !_input.MoveLeft)

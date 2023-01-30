@@ -25,6 +25,18 @@ public class ColliderManagement : MonoBehaviour
         _colliderCenterAtStart = _collider.center;
         _colliderSizeAtStart = _collider.size;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+           // _isDead = true;
+            GameManager.Instance.StopGame();
+        }
+        if (collision.gameObject.tag == "score")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 
     public void JumpState()
     {
@@ -55,5 +67,6 @@ public class ColliderManagement : MonoBehaviour
         _collider.center = _colliderCenterAtStart;
         _collider.size = _colliderSizeAtStart;
     }
+
 
 }
