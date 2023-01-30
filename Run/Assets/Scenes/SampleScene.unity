@@ -376,12 +376,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _maxSpawnTime
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _minSpawnTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
+      propertyPath: _obstaclePrefab
+      value: 
+      objectReference: {fileID: 4661153797087425725, guid: 392330cabb6eeca47a7e84034bb86215, type: 3}
     - target: {fileID: 525124303572187797, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
@@ -1044,12 +1048,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _maxSpawnTime
-      value: 7
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _minSpawnTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
+      propertyPath: _obstaclePrefab
+      value: 
+      objectReference: {fileID: 1536755092300838415, guid: 7a77744704bd3bf44bee6d95b2ea6286, type: 3}
     - target: {fileID: 525124303572187797, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
@@ -1210,12 +1218,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _maxSpawnTime
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: _minSpawnTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 525124303572187796, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
+      propertyPath: _obstaclePrefab
+      value: 
+      objectReference: {fileID: 1508719604021022385, guid: 0eb942d4f316dd0489befa1ee95fde42, type: 3}
     - target: {fileID: 525124303572187797, guid: bd74174ce7074ad4a835be62051c5a42, type: 3}
       propertyPath: m_Name
       value: Spawner
