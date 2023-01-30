@@ -24,7 +24,7 @@ public class InputReader
         _playerInput.currentActionMap.actions[2].performed += OnMoveLeft;
         _playerInput.currentActionMap.actions[2].canceled += OnMoveLeft;
 
-        _playerInput.currentActionMap.actions[3].performed += OnMoveDown;
+        _playerInput.currentActionMap.actions[3].started += OnMoveDown;
         _playerInput.currentActionMap.actions[3].canceled += OnMoveDown;
     }
 

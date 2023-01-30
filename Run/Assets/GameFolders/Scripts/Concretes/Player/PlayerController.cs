@@ -11,6 +11,7 @@ public class PlayerController : Lines
     AirMovement _move;
     InputReader _input;
     Animator _anim;
+    BoxCollider _collider;
 
     bool _jumped;
     bool _moveDown;
@@ -22,6 +23,7 @@ public class PlayerController : Lines
         _move = new AirMovement(this);
         _input = new InputReader(GetComponent<PlayerInput>());
         _anim = GetComponentInChildren<Animator>();
+        _collider = GetComponent<BoxCollider>();
     }
     private void OnEnable()
     {
@@ -32,21 +34,42 @@ public class PlayerController : Lines
     {
         if (_isDead) return;
         HandleInputs();
+        if (_move.IsOnGround)
+        {
+            _anim.SetBool("IsOnGround", true);
+            _anim.SetBool("IsFalling", false);
+            _anim.SetBool("IsJumped", false);
+        }
+        else if(_move.IsFalling)
+        {
+            _anim.SetBool("IsFalling",true);
+            _anim.SetBool("IsJumped", false);
+        }
+        else
+        {
+            _anim.SetBool("IsFalling", false);
+            _anim.SetBool("IsOnGround", false);
+
+        }
+ 
     }
     private void FixedUpdate()
     {
         if (_jumped)
         {
             _move.Jump(jumpForce);
+            _anim.SetBool("IsJumped",true);
+            _anim.SetBool("IsRolled", false);
             _jumped = false;
-            _moveDown = false;    //priority for jump
-
+            _moveDown = false;    //priority for jump, otherwise stuttering in case of jump + movedown
         }
         if (_moveDown)
         {
             _move.GroundPound(jumpForce);
             _moveDown = false;
+            Debug.Log("moveDown");
         }
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -70,12 +93,16 @@ public class PlayerController : Lines
         {
             _jumped = true;
         }
-        if (_input.MoveDown)
+        if (_input.MoveDown && !_input.Jump)
         {
             _moveDown = true;
+            _anim.SetBool("IsRolled",true);
+        }     
+        else
+        {
+            if(_move.IsOnGround && !_jumped)
+            _anim.SetBool("IsRolled", false);
         }
-
-
     }
     private void MoveRight()
     {

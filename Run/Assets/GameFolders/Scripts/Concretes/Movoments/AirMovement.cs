@@ -9,7 +9,8 @@ public class AirMovement   // VerticalMovement?
     {
         _rigidbody = player.GetComponent<Rigidbody>();
     }
-    public bool IsOnGround { get => _rigidbody.velocity.y == 0; }
+    public bool IsOnGround { get =>  _rigidbody.position.y <0.05f; } //velocity control doesn't work because of the falling
+    public bool IsFalling { get => _rigidbody.velocity.y < 0f; }
     public void Jump(float force)
     {
         if (_rigidbody.velocity.y != 0) { return; }
@@ -22,5 +23,6 @@ public class AirMovement   // VerticalMovement?
         _rigidbody.AddForce(Vector3.down* Time.fixedDeltaTime * force);
         
     }
+    
 
 }
