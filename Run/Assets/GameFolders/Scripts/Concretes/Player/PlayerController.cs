@@ -11,6 +11,7 @@ public class PlayerController : Lines
     Movement _move;
     InputReader _input;
     Animator _anim;
+   
 
 
     bool _jumped;
@@ -24,6 +25,7 @@ public class PlayerController : Lines
         _move = new Movement(this);
         _input = new InputReader(GetComponent<PlayerInput>());
         _anim = GetComponentInChildren<Animator>();
+        
 
     }
     private void OnEnable()
@@ -37,6 +39,7 @@ public class PlayerController : Lines
         HandleInputs();
         if (_move.IsOnGround)
         {
+           
             _anim.SetBool("IsOnGround", true);
             _anim.SetBool("IsFalling", false);
             _anim.SetBool("IsJumped", false);
@@ -44,11 +47,13 @@ public class PlayerController : Lines
         }
         else if(_move.IsFalling)
         {
+            
             _anim.SetBool("IsFalling",true);
             _anim.SetBool("IsJumped", false);
         }
         else
         {
+        
             _anim.SetBool("IsFalling", false);
             _anim.SetBool("IsOnGround", false);
 
@@ -64,10 +69,11 @@ public class PlayerController : Lines
             _anim.SetBool("IsRolled", false);
             _jumped = false;
             _moveDown = false;    //priority for jump, otherwise stuttering in case of jump + movedown
+            
         }
         if (_moveDown)
         {
-            _move.GroundPound(jumpForce);
+            _move.Roll(jumpForce);
             _moveDown = false;
         }
 
@@ -89,29 +95,31 @@ public class PlayerController : Lines
         if (_input.MoveLeft && !_input.MoveRight)
         {
             MoveLeft();
+          
         }
         if (_input.Jump)
         {
             _jumped = true;
+           
         }
         if (_input.MoveDown && !_input.Jump)
         {
             _moveDown = true;
             _anim.SetBool("IsRolled",true);
-            _move.RollCollider(true);
         }     
         else
         {
-            _move.RollCollider(false);
             if (_move.IsOnGround && !_jumped)
             _anim.SetBool("IsRolled", false);
         }
+        
     }
     private void MoveRight()
     {
         if (IsInLine || !_moveRight)
         {
             LineIncrease();
+            
             _moveRight = true;
         }
     }
@@ -121,6 +129,7 @@ public class PlayerController : Lines
         {
             LineDecrease();
             _moveRight = false;
+
         }      
     }
 
