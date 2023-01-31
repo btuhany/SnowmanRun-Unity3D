@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstaclePrefabs:
-  - {fileID: 333588095179855710, guid: c1741cedad398ba4eb9a13a5e87f4112, type: 3}
+  - {fileID: 1536755092300838415, guid: 7a77744704bd3bf44bee6d95b2ea6286, type: 3}
   - {fileID: 333588095179855710, guid: c1741cedad398ba4eb9a13a5e87f4112, type: 3}
 --- !u!4 &853750687
 Transform:
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d19b3e4ad3ad92479b7f6f128486d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpAndRollForce: 20000
+  jumpAndRollForce: 250
 --- !u!4 &1239712002
 Transform:
   m_ObjectHideFlags: 0
@@ -1566,11 +1566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4149392523460021751, guid: 668caeef3f091244986846c489fc2dd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.600002
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 4149392523460021751, guid: 668caeef3f091244986846c489fc2dd6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 143.1
+      value: 227.8
       objectReference: {fileID: 0}
     - target: {fileID: 4149392523460021751, guid: 668caeef3f091244986846c489fc2dd6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1612,7 +1612,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3d16fad9b7651264590ff336d3911cc5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4476336109076507166, guid: 668caeef3f091244986846c489fc2dd6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 668caeef3f091244986846c489fc2dd6, type: 3}
 --- !u!1001 &2073042250
 PrefabInstance:

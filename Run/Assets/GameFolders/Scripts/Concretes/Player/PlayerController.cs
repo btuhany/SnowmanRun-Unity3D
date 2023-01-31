@@ -63,7 +63,7 @@ public class PlayerController : Lines
     {
         if (_jumped)
         {
-            _move.Jump(jumpAndRollForce);
+            _move.Jump(jumpAndRollForce*100);
             _anim.SetBool("IsJumped",true);
             _anim.SetBool("IsRolled", false);
             _jumped = false;
@@ -72,7 +72,7 @@ public class PlayerController : Lines
         }
         if (_moveDown)
         {
-            _move.Roll(jumpAndRollForce);
+            _move.Roll(jumpAndRollForce*100);
             _moveDown = false;
           
         }
