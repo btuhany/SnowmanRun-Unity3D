@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnerManager : Lines
 {
-    [SerializeField] ObstacleManager _obstaclePrefab;
+   
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
     [SerializeField] [Range(0,2)] int _lineNumber;
@@ -33,8 +33,10 @@ public class SpawnerManager : Lines
 
     private void Spawn()
     {
-    
-        Instantiate(_obstaclePrefab, transform.position, Quaternion.Euler(0,0,0));
+        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool();
+        newObs.transform.parent = this.transform;
+        newObs.transform.position = this.transform.position;
+        newObs.gameObject.SetActive(true);
     }
     private void GetRandomSpawnTime()
     {

@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1883390236809311029, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
+      propertyPath: moveSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883390236809311029, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
+      propertyPath: _maxLifeTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311030, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_RootOrder
       value: 0

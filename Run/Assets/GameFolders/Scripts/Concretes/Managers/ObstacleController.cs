@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleManager : MonoBehaviour
+public class ObstacleController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] private float _maxLifeTime;
@@ -19,11 +19,11 @@ public class ObstacleManager : MonoBehaviour
         if(_currentLifeTime>_maxLifeTime)
         {
             _currentLifeTime = 0f;
-            Destroy(this.gameObject);
+           
         }
-        if (transform.position.z < -5f)
+        if(transform.position.z <-5f)
         {
-            Destroy(this.gameObject);
+            ObstaclePoolManager.Instance.SetPool(this);
         }
     }
     private void FixedUpdate()
