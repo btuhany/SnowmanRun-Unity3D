@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
 {
-    [SerializeField] ObstacleController _obstaclePrefab;
+    [SerializeField] ObstacleController[] _obstaclePrefabs;
 
     Queue<ObstacleController> _obstacles = new Queue<ObstacleController> ();
     private void Awake()
@@ -23,7 +23,7 @@ public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
     {
         for(int i = 0; i < 10; i++)
         {
-            ObstacleController newObstacle = Instantiate(_obstaclePrefab);
+            ObstacleController newObstacle = Instantiate(_obstaclePrefabs[0]);
             newObstacle.gameObject.SetActive(false);
             newObstacle.transform.parent = this.transform;
             _obstacles.Enqueue(newObstacle);
