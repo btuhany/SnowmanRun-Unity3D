@@ -47,3 +47,5 @@ MonoBehaviour:
   _obstaclePrefab: {fileID: 1883390236809311029, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
   _maxSpawnTime: 4
   _minSpawnTime: 1
+  _lineNumber: 0
+  IsObstacle: 1

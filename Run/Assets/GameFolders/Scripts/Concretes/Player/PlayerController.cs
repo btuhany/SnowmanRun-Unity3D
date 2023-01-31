@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerController : Lines
 {
-    [SerializeField] float jumpForce;
+    [SerializeField] float jumpAndRollForce;
     Movement _move;
     InputReader _input;
     Animator _anim;
@@ -63,7 +63,7 @@ public class PlayerController : Lines
     {
         if (_jumped)
         {
-            _move.Jump(jumpForce);
+            _move.Jump(jumpAndRollForce);
             _anim.SetBool("IsJumped",true);
             _anim.SetBool("IsRolled", false);
             _jumped = false;
@@ -72,8 +72,9 @@ public class PlayerController : Lines
         }
         if (_moveDown)
         {
-            _move.Roll(jumpForce);
+            _move.Roll(jumpAndRollForce);
             _moveDown = false;
+          
         }
 
     }
@@ -98,6 +99,7 @@ public class PlayerController : Lines
         {
             _moveDown = true;
             _anim.SetBool("IsRolled",true);
+            _anim.SetBool("IsFalling", false) ;
         }     
         else
         {

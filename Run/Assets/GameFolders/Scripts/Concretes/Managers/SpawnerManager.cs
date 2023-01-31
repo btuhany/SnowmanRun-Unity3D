@@ -8,13 +8,17 @@ public class SpawnerManager : Lines
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
     [SerializeField] [Range(0,2)] int _lineNumber;
-
+    [SerializeField] bool IsObstacle;
     float _randomSpawnTime;
     float _currentSpawnTime;
     private void OnEnable()
     {
-        SetLine(_lineNumber);
-        GetInTheLine(_lineNumber);
+        if(IsObstacle)
+        {
+            SetLine(_lineNumber);
+            GetInTheLine(_lineNumber);
+        }
+
         GetRandomSpawnTime();
     }
     private void Update()

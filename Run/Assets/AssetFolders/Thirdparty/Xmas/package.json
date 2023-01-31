@@ -1,0 +1,34 @@
+{
+  "name": "com.lafinca.christmas.textures",
+  "version": "1.0.0",
+  "displayName": "Christmas Textures",
+  "description": "This package provides the game designers a collection of textures to remind old school games. \nIt will start with a few textures and materials at 4k resolution.\n\nThese textures are pixelated and could be used specially for level design and terrains.",
+  "keywords": [
+    "textures",
+    "retro",
+    "midgard",
+    "ragnarok",
+    "nordic",
+    "old school",
+    "pack",
+    "terrain",
+    "PBR",
+    "pixelated textures",
+    "rpg",
+    "mjolnir",
+    "world",
+    "map",
+    "winter",
+    "snow",
+    "ice",
+    "wall",
+    "chirstmas",
+    "xmas",
+    "santa"
+  ],
+  "author": {
+    "name": "LaFinca Studio",
+    "email": "lafincastudio@gmail.com",
+    "url": "https://lafinca.studio"
+  }
+}
