@@ -9,7 +9,10 @@ public enum ObstacleType
     RollCube,
     LongCube,
     ShortCube,
-    EnergySphere
+    EnergySphere,
+    Decor1,
+    Decor2,
+    Decor3
 }
 
 

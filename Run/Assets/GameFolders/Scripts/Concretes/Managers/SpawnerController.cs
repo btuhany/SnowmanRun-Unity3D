@@ -14,7 +14,7 @@ public class SpawnerController : Lines
     int _spawnVariationIndex;
     float _spawnVariationTime;
 
-    public bool IsSpawnIndexExceeded => _spawnVariationIndex >= ObstaclePoolManager.Instance.NumberOfObstacles;
+    public bool IsSpawnIndexExceeded => _spawnVariationIndex >= 5;
     private void OnEnable()
     {
         SetLine(_lineNumber);

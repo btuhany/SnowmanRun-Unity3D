@@ -6,10 +6,10 @@ public class SpawnerManager : SingletonMonoBehaviour<SpawnerManager>
 {
     //[SerializeField] int _jumpCubeObstacleLimit;
     //[SerializeField] int _rollCubeObstacleLimit;
-    //[SerializeField] int _shortCubeObstacleLimit;
     //[SerializeField] int _longCubeObstacleLimit;
+    //[SerializeField] int _shortCubeObstacleLimit;
     //[SerializeField] int _energySphereCubeObstacleLimit;
-    [SerializeField] int[] _obstacleLimits = new int[5];
+    [SerializeField] int[] _obstacleLimits = new int[8];
     [SerializeField] float _spawnVariationDelay;
     public float SpawnVariationDelay { get => _spawnVariationDelay; }
 

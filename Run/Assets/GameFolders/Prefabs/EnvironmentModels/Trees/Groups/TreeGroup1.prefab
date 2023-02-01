@@ -418,6 +418,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
+      propertyPath: _moveSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
+      propertyPath: _obstacleType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3274705099327182845, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
       propertyPath: m_Name
       value: TreeGroup1
@@ -466,7 +474,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2814318228617232817, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
 --- !u!4 &4303550839392667467 stripped
 Transform:

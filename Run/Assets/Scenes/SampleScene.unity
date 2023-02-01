@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &304422494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6fe0b60ec7d7b44b5f81732e1afe49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _decorPrefab: {fileID: 2470204495681146095, guid: 8eeea638bd3dd0047a4844382f3d3311, type: 3}
-  _maxSpawnTime: 8
-  _minSpawnTime: 7
+  _maxSpawnTime: 6
+  _minSpawnTime: 5
 --- !u!4 &304422495
 Transform:
   m_ObjectHideFlags: 0
@@ -202,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304422493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 117.28}
+  m_LocalPosition: {x: -26.5, y: 0, z: 69.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -290,8 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5146fcb09271a4bb225c9dc053a9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleLimits: 0500000001000000010000000100000002000000
-  _spawnVariationDelay: 0
+  _obstacleLimits: 0500000001000000010000000100000002000000070000000700000007000000
+  _spawnVariationDelay: 2
 --- !u!4 &493404862
 Transform:
   m_ObjectHideFlags: 0
@@ -698,6 +697,9 @@ MonoBehaviour:
   - {fileID: 333588095179855710, guid: c1741cedad398ba4eb9a13a5e87f4112, type: 3}
   - {fileID: 8096016329491795844, guid: 22ed63aacb072894a892930ceb6d9254, type: 3}
   - {fileID: 1508719604021022385, guid: 0eb942d4f316dd0489befa1ee95fde42, type: 3}
+  - {fileID: 8320336666162783728, guid: 8eeea638bd3dd0047a4844382f3d3311, type: 3}
+  - {fileID: 301883146615791171, guid: 22cc17eb6ccc1594780076a143a6f01d, type: 3}
+  - {fileID: 7817316167187667626, guid: f890008ee77a065438386c643393d75d, type: 3}
 --- !u!4 &853750687
 Transform:
   m_ObjectHideFlags: 0
@@ -1756,7 +1758,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2098902353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,9 +1771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6fe0b60ec7d7b44b5f81732e1afe49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _decorPrefab: {fileID: 6125083392076265308, guid: 22cc17eb6ccc1594780076a143a6f01d, type: 3}
-  _maxSpawnTime: 8
-  _minSpawnTime: 7
+  _maxSpawnTime: 6
+  _minSpawnTime: 5
 --- !u!4 &2098902354
 Transform:
   m_ObjectHideFlags: 0

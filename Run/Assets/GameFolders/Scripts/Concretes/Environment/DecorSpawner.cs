@@ -5,7 +5,7 @@ using UnityEngine;
 //Could use it with spawner manager with a spawner abstract class.
 public class DecorSpawner : MonoBehaviour
 {
-    [SerializeField] DecorMovement _decorPrefab;
+    
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
     
@@ -27,8 +27,18 @@ public class DecorSpawner : MonoBehaviour
     }
     private void Spawn()
     {
+        int randomNumber = Random.Range(5,8);
+        ObstacleType obstacle = (ObstacleType)randomNumber;
+        if (!SpawnerManager.Instance.CanSpawn(obstacle))
+        {
+            Debug.Log("returned");
+            return;
 
-        Instantiate(_decorPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        }
+        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)randomNumber);
+        newObs.transform.parent = this.transform;
+        newObs.transform.position = this.transform.position;
+        newObs.gameObject.SetActive(true);
     }
     private void GetRandomSpawnTime()
     {
