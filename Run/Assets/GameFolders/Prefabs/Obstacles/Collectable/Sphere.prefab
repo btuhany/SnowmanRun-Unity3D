@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 4629198418683645702}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: score
+  m_TagString: energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

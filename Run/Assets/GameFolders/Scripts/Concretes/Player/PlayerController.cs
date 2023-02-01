@@ -7,17 +7,18 @@ using UnityEngine.UI;
 
 public class PlayerController : Lines
 {
+    [SerializeField] GameObject snowBall;
     [SerializeField] float jumpAndRollForce;
     Movement _move;
     InputReader _input;
     Animator _anim;
-   
+    
 
 
     bool _jumped;
     bool _moveDown;
     bool _moveRight;   //prevents line increasing while moving between lines + also player can cancel the line movement.
-    private bool _isDead = false;
+    
 
 
     private void Awake()
@@ -35,7 +36,7 @@ public class PlayerController : Lines
 
     void Update()
     {
-        if (_isDead) return;
+        if (EnergyAndHealthManager.Instance.IsDead) return;
         HandleInputs();
         if (_move.IsOnGround)
         {
@@ -95,6 +96,10 @@ public class PlayerController : Lines
             _jumped = true;
            
         }
+        if(Input.GetKeyDown(KeyCode.F) && EnergyAndHealthManager.Instance.IsThereEnergy)
+        {
+            ThrowSnowBall();
+        }
         if (_input.MoveDown && !_input.Jump)
         {
             _moveDown = true;
@@ -126,6 +131,10 @@ public class PlayerController : Lines
 
         }      
     }
-
+    private void ThrowSnowBall()
+    {
+        Instantiate(snowBall, transform.position, transform.rotation);
+        EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+    }
     
 }

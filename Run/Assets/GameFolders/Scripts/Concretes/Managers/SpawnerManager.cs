@@ -21,11 +21,11 @@ public class SpawnerManager : SingletonMonoBehaviour<SpawnerManager>
     }
     private void Update()
     {
-        Debug.Log("jumpcube" +_obstacleNumbers[ObstacleType.JumpCube]);
-        Debug.Log("rollcube" + _obstacleNumbers[ObstacleType.RollCube]);
-        Debug.Log("shortcube" + _obstacleNumbers[ObstacleType.ShortCube]);
-        Debug.Log("longcube" + _obstacleNumbers[ObstacleType.LongCube]);
-        Debug.Log("energysphere" + _obstacleNumbers[ObstacleType.EnergySphere]);
+        //Debug.Log("jumpcube" +_obstacleNumbers[ObstacleType.JumpCube]);
+        //Debug.Log("rollcube" + _obstacleNumbers[ObstacleType.RollCube]);
+        //Debug.Log("shortcube" + _obstacleNumbers[ObstacleType.ShortCube]);
+        //Debug.Log("longcube" + _obstacleNumbers[ObstacleType.LongCube]);
+        //Debug.Log("energysphere" + _obstacleNumbers[ObstacleType.EnergySphere]);
     }
  
     public void NewObstacle(ObstacleController obstacle)

@@ -31,14 +31,16 @@ public class ColliderManagement : MonoBehaviour
         if (obstacle == null) return;
         if (collision.gameObject.tag == "enemy")
         {
-           // _isDead = true;
-            GameManager.Instance.StopGame();
+            // _isDead = true;
+            EnergyAndHealthManager.Instance.DecreaseHealth(1);
         }
-        if (collision.gameObject.tag == "score")
+        if (collision.gameObject.tag == "energy")
         {
             ObstaclePoolManager.Instance.SetPool(obstacle);
+            EnergyAndHealthManager.Instance.IncreaseEnergy(1);
         }
     }
+   
 
     public void JumpState()
     {
