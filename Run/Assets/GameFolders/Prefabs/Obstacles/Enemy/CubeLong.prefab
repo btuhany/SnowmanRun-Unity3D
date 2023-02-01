@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311024, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_Size.y
-      value: 0.7611918
+      value: 0.40161
       objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311024, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_Size.z
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311024, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_Center.y
-      value: -0.119404264
+      value: -0.29919553
       objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311024, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_Center.z
@@ -291,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 1883390236809311028, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_Name
       value: CubeLong
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883390236809311029, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
+      propertyPath: _obstacleType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1883390236809311030, guid: 7793f2d6c557527488866f36bdc9df8a, type: 3}
       propertyPath: m_RootOrder

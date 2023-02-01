@@ -8,17 +8,12 @@ public class SpawnerManager : Lines
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
     [SerializeField] [Range(0,2)] int _lineNumber;
-    [SerializeField] bool IsObstacle;
     float _randomSpawnTime;
     float _currentSpawnTime;
     private void OnEnable()
     {
-        if(IsObstacle)
-        {
-            SetLine(_lineNumber);
-            GetInTheLine(_lineNumber);
-        }
-
+        SetLine(_lineNumber);
+        GetInTheLine(_lineNumber);
         GetRandomSpawnTime();
     }
     private void Update()
@@ -33,7 +28,8 @@ public class SpawnerManager : Lines
 
     private void Spawn()
     {
-        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool();
+
+        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)Random.Range(0,5));
         newObs.transform.parent = this.transform;
         newObs.transform.position = this.transform.position;
         newObs.gameObject.SetActive(true);

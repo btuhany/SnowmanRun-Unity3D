@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
+    [SerializeField] ObstacleType _obstacleType;
     [SerializeField] float moveSpeed;
-    [SerializeField] private float _maxLifeTime;
+    [SerializeField] private float _minZ;
     VerticalMover _move;
-    private float _currentLifeTime;
-
+    public ObstacleType ObstacleType => _obstacleType;
     private void Awake()
     {
         _move = new VerticalMover(this.gameObject);
     }
     private void Update()
     {
-        _currentLifeTime += Time.deltaTime;
-        if(_currentLifeTime>_maxLifeTime)
-        {
-            _currentLifeTime = 0f;
-           
-        }
-        if(transform.position.z <-5f)
+        if(transform.position.z <_minZ)
         {
             ObstaclePoolManager.Instance.SetPool(this);
         }

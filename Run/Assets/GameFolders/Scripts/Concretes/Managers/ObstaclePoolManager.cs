@@ -7,7 +7,7 @@ public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
 {
     [SerializeField] ObstacleController[] _obstaclePrefabs;
 
-    Queue<ObstacleController> _obstacles = new Queue<ObstacleController> ();
+    Dictionary<ObstacleType, Queue<ObstacleController>> _obstaclesDictionary = new Dictionary<ObstacleType, Queue<ObstacleController>>();
     private void Awake()
     {
         SingletonThisObject(this);
@@ -21,12 +21,18 @@ public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
 
     private void InitalizePool()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < _obstaclePrefabs.Length; i++) //for each prefab create a queue and add it to the dictionary
         {
-            ObstacleController newObstacle = Instantiate(_obstaclePrefabs[0]);
-            newObstacle.gameObject.SetActive(false);
-            newObstacle.transform.parent = this.transform;
-            _obstacles.Enqueue(newObstacle);
+            Queue<ObstacleController> obstacleQueue = new Queue<ObstacleController> ();
+
+            for (int j = 0; j < 8; j++)
+            {
+                ObstacleController newObstacle = Instantiate(_obstaclePrefabs[i]);
+                newObstacle.gameObject.SetActive(false);
+                newObstacle.transform.parent = this.transform;
+                obstacleQueue.Enqueue (newObstacle);
+            }
+            _obstaclesDictionary.Add((ObstacleType)i, obstacleQueue);
         }
     }
 
@@ -34,15 +40,22 @@ public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
     {
         obstacle.gameObject.SetActive(false);
         obstacle.transform.parent = this.transform;
-        _obstacles.Enqueue (obstacle);
+
+        Queue<ObstacleController> obstacleQueue = _obstaclesDictionary[obstacle.ObstacleType];
+        obstacleQueue.Enqueue(obstacle);
     }
-    public ObstacleController GetPool()
+    public ObstacleController GetPool(ObstacleType obstacleType)
     {
-        if(_obstacles.Count ==0)
+        Queue<ObstacleController> obstacleQueue = _obstaclesDictionary[obstacleType];
+        if(obstacleQueue.Count == 0)
         {
-            InitalizePool();
+            for (int i = 0; i < 2; i++)
+            {
+                ObstacleController newObstacle = Instantiate(_obstaclePrefabs[(int)obstacleType]);
+                obstacleQueue.Enqueue(newObstacle);
+            }
         }
-        return _obstacles.Dequeue();
+        return obstacleQueue.Dequeue();
     }
 
 }
