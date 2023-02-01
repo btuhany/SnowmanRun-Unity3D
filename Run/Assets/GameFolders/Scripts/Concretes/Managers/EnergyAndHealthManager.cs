@@ -17,8 +17,8 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     }
     private void Update()
     {
-        Debug.Log(_currentEnergy);
-        Debug.Log(_maxHealth);
+        Debug.Log("Energy: " + _currentEnergy);
+        Debug.Log("Health: " +_maxHealth);
     }
     public void IncreaseEnergy(int energy)
     {

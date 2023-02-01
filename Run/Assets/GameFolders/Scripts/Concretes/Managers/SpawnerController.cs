@@ -7,6 +7,7 @@ public class SpawnerController : Lines
    
     [SerializeField] float _maxSpawnTime;
     [SerializeField] float _minSpawnTime;
+    [SerializeField] Vector3 _spawnOffset; 
     [SerializeField] [Range(0,2)] int _lineNumber;
     float _randomSpawnTime;
     float _currentSpawnTime;
@@ -53,7 +54,7 @@ public class SpawnerController : Lines
         }
         ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)randomNumber);
         newObs.transform.parent = this.transform;
-        newObs.transform.position = this.transform.position;
+        newObs.transform.position = this.transform.position + _spawnOffset;
         newObs.gameObject.SetActive(true);
     }
     private void GetRandomSpawnTime()

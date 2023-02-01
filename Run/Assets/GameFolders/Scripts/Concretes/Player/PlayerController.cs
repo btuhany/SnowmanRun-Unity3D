@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerController : Lines
 {
-    [SerializeField] GameObject snowBall;
+    [SerializeField] SnowballController snowBall;
+    [SerializeField] SnowballController snowBallBig;
     [SerializeField] float jumpAndRollForce;
     Movement _move;
     InputReader _input;
@@ -98,7 +99,10 @@ public class PlayerController : Lines
         }
         if(Input.GetKeyDown(KeyCode.F) && EnergyAndHealthManager.Instance.IsThereEnergy)
         {
-            ThrowSnowBall();
+            if (EnergyAndHealthManager.Instance.IsEnergyFull)
+                ThrowSnowBall(2);
+            else
+                ThrowSnowBall(1);
         }
         if (_input.MoveDown && !_input.Jump)
         {
@@ -131,10 +135,20 @@ public class PlayerController : Lines
 
         }      
     }
-    private void ThrowSnowBall()
+    private void ThrowSnowBall(int snowBallNumber)
     {
-        Instantiate(snowBall, transform.position, transform.rotation);
-        EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+        Vector3 tempVect = new Vector3(transform.position.x, transform.position.y + 2.6f, transform.position.z + 0.7f);
+        if (snowBallNumber == 1)
+        {
+            
+            Instantiate(snowBall, tempVect, transform.rotation);
+            EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+        }
+        else if(snowBallNumber ==2)
+        {
+            Instantiate(snowBallBig, tempVect, transform.rotation);
+            EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+        }
     }
     
 }
