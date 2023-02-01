@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Lines : MonoBehaviour
 {
-    const float _lineDistance = 8f;
+    const float _lineDistance = 6.7f;
     private Vector3 line;
 
     protected Vector3[] lines = 

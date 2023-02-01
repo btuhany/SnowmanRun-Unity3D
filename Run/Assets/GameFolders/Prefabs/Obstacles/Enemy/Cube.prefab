@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _moveSpeed: 10
+  _moveSpeed: 30
   _minZ: -7
   _isDecore: 0
 --- !u!65 &1883390236809311024

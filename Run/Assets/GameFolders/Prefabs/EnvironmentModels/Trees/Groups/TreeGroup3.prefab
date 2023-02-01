@@ -443,8 +443,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
+      propertyPath: _minZ
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
       propertyPath: _moveSpeed
-      value: 80
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
       propertyPath: _obstacleType

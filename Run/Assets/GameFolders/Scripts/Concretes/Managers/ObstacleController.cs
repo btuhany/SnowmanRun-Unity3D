@@ -8,7 +8,7 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] ObstacleType _obstacleType;
     [SerializeField] float _moveSpeed;
     [SerializeField] private float _minZ;
-    [SerializeField] private bool _isDecore;
+    [SerializeField] private bool _isDecore; // !!!! needs another class !!!!
     VerticalMover _move;
 
     
@@ -24,7 +24,7 @@ public class ObstacleController : MonoBehaviour
         SpawnerManager.Instance.NewObstacle(this);
         if(_isDecore)
         {
-            transform.localScale = Vector3.one * 0.1f;
+            transform.localScale = Vector3.one * 0.4f;
         }
     }
     private void OnDisable()
@@ -39,12 +39,7 @@ public class ObstacleController : MonoBehaviour
         }
         if(_isDecore)
         {
-            
-            if(transform.localScale != Vector3.one)
-            {
-                transform.localScale += Vector3.one * Time.deltaTime * 0.5f;
-            }
-            transform.position += Vector3.back * Time.deltaTime * _moveSpeed;
+            DecoreObject();
         }
         
     }
@@ -53,6 +48,14 @@ public class ObstacleController : MonoBehaviour
     {
         if (_isDecore) return;
         _move.FixedTick(_moveSpeed);
+    }
+    void DecoreObject()
+    {
+        if (transform.localScale.x < 1)
+        {
+            transform.localScale += Vector3.one * Time.deltaTime * 0.7f;
+        }
+        transform.position += Vector3.back * Time.deltaTime * _moveSpeed;
     }
     
     

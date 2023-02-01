@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _moveSpeed: 20
+  _moveSpeed: 15
   _minZ: -5
   _isDecore: 1
