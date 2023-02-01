@@ -47,7 +47,7 @@ public class SpawnerController : Lines
         ObstacleType obstacle = (ObstacleType)randomNumber;
         if (!SpawnerManager.Instance.CanSpawn(obstacle))
         {
-            Debug.Log("returnlendi");
+            Debug.Log("returned");
             return;
             
         }
