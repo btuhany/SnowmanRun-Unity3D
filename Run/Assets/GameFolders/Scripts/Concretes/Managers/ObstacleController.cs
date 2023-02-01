@@ -13,6 +13,14 @@ public class ObstacleController : MonoBehaviour
     {
         _move = new VerticalMover(this.gameObject);
     }
+    private void OnEnable()
+    {
+        SpawnerManager.Instance.NewObstacle(this);
+    }
+    private void OnDisable()
+    {
+        SpawnerManager.Instance.DeleteObstacle(this);
+    }
     private void Update()
     {
         if(transform.position.z <_minZ)

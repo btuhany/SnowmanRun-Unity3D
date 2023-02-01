@@ -6,8 +6,13 @@ using UnityEngine;
 public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
 {
     [SerializeField] ObstacleController[] _obstaclePrefabs;
+    
 
     Dictionary<ObstacleType, Queue<ObstacleController>> _obstaclesDictionary = new Dictionary<ObstacleType, Queue<ObstacleController>>();
+
+    
+    public int NumberOfObstacles { get => _obstaclePrefabs.Length; }
+
     private void Awake()
     {
         SingletonThisObject(this);
@@ -49,11 +54,8 @@ public class ObstaclePoolManager : SingletonMonoBehaviour<ObstaclePoolManager>
         Queue<ObstacleController> obstacleQueue = _obstaclesDictionary[obstacleType];
         if(obstacleQueue.Count == 0)
         {
-            for (int i = 0; i < 2; i++)
-            {
                 ObstacleController newObstacle = Instantiate(_obstaclePrefabs[(int)obstacleType]);
                 obstacleQueue.Enqueue(newObstacle);
-            }
         }
         return obstacleQueue.Dequeue();
     }

@@ -27,6 +27,8 @@ public class ColliderManagement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        ObstacleController obstacle = collision.gameObject.GetComponent<ObstacleController>();
+        if (obstacle == null) return;
         if (collision.gameObject.tag == "enemy")
         {
            // _isDead = true;
@@ -34,7 +36,7 @@ public class ColliderManagement : MonoBehaviour
         }
         if (collision.gameObject.tag == "score")
         {
-            Destroy(collision.gameObject);
+            ObstaclePoolManager.Instance.SetPool(obstacle);
         }
     }
 

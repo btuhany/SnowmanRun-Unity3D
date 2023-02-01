@@ -7,8 +7,8 @@ public enum ObstacleType
 {
     JumpCube,
     RollCube,
-    LongCube,
     ShortCube,
+    LongCube,
     EnergySphere
 }
 

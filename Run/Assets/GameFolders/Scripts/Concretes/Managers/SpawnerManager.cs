@@ -2,41 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerManager : Lines
+public class SpawnerManager : SingletonMonoBehaviour<SpawnerManager>
 {
-   
-    [SerializeField] float _maxSpawnTime;
-    [SerializeField] float _minSpawnTime;
-    [SerializeField] [Range(0,2)] int _lineNumber;
-    float _randomSpawnTime;
-    float _currentSpawnTime;
-    private void OnEnable()
+    //[SerializeField] int _jumpCubeObstacleLimit;
+    //[SerializeField] int _rollCubeObstacleLimit;
+    //[SerializeField] int _shortCubeObstacleLimit;
+    //[SerializeField] int _longCubeObstacleLimit;
+    //[SerializeField] int _energySphereCubeObstacleLimit;
+    [SerializeField] int[] _obstacleLimits = new int[5];
+    [SerializeField] float _spawnVariationDelay;
+    public float SpawnVariationDelay { get => _spawnVariationDelay; }
+
+    Dictionary<ObstacleType, int> _obstacleNumbers = new Dictionary<ObstacleType, int>();
+ 
+    private void Awake()
     {
-        SetLine(_lineNumber);
-        GetInTheLine(_lineNumber);
-        GetRandomSpawnTime();
+        SingletonThisObject(this);
     }
     private void Update()
     {
-        _currentSpawnTime += Time.deltaTime;    
-        if(_currentSpawnTime>_randomSpawnTime)
+        Debug.Log("jumpcube" +_obstacleNumbers[ObstacleType.JumpCube]);
+        Debug.Log("rollcube" + _obstacleNumbers[ObstacleType.RollCube]);
+        Debug.Log("shortcube" + _obstacleNumbers[ObstacleType.ShortCube]);
+        Debug.Log("longcube" + _obstacleNumbers[ObstacleType.LongCube]);
+        Debug.Log("energysphere" + _obstacleNumbers[ObstacleType.EnergySphere]);
+    }
+ 
+    public void NewObstacle(ObstacleController obstacle)
+    {
+        if(!_obstacleNumbers.ContainsKey(obstacle.ObstacleType))
         {
-            Spawn();
-            GetRandomSpawnTime();
+            _obstacleNumbers.Add(obstacle.ObstacleType, 0);
+        }
+        else
+        {
+            _obstacleNumbers[obstacle.ObstacleType]++;
         }
     }
-
-    private void Spawn()
+    public void DeleteObstacle(ObstacleController obstacle)
     {
-
-        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)Random.Range(0,5));
-        newObs.transform.parent = this.transform;
-        newObs.transform.position = this.transform.position;
-        newObs.gameObject.SetActive(true);
+        if (!_obstacleNumbers.ContainsKey(obstacle.ObstacleType))
+        {
+            return;
+        }
+        else
+        {
+            _obstacleNumbers[obstacle.ObstacleType]--;
+            if(_obstacleNumbers[obstacle.ObstacleType] < 0)
+                _obstacleNumbers[obstacle.ObstacleType] = 0;
+        }
     }
-    private void GetRandomSpawnTime()
+    public bool CanSpawn(ObstacleType obstacle)
     {
-        _currentSpawnTime = 0f;
-        _randomSpawnTime = Random.Range(_minSpawnTime, _maxSpawnTime);
+        if (_obstacleNumbers[obstacle] >= _obstacleLimits[(int)obstacle])
+            return false;
+        else
+            return true;
     }
 }
