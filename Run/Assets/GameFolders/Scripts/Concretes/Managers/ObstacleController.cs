@@ -22,6 +22,10 @@ public class ObstacleController : MonoBehaviour
     private void OnEnable()
     {
         SpawnerManager.Instance.NewObstacle(this);
+        if(_isDecore)
+        {
+            transform.localScale = Vector3.one * 0.1f;
+        }
     }
     private void OnDisable()
     {
@@ -35,6 +39,11 @@ public class ObstacleController : MonoBehaviour
         }
         if(_isDecore)
         {
+            
+            if(transform.localScale != Vector3.one)
+            {
+                transform.localScale += Vector3.one * Time.deltaTime * 0.5f;
+            }
             transform.position += Vector3.back * Time.deltaTime * _moveSpeed;
         }
         
