@@ -10,10 +10,15 @@ public class SnowballController : MonoBehaviour
 
     [SerializeField] bool IsBig;
     int _destroyedEnemyCount;
+    Rigidbody _rb;
+    private void Awake()
+    {
+        _rb=GetComponent<Rigidbody>();
+    }
     private void Update()
     {
-        transform.position += Vector3.forward * Time.deltaTime * _moveSpeed;
-        if(transform.position.z>_killAtMaxZ)
+        _rb.position += Vector3.forward * Time.deltaTime * _moveSpeed;
+        if(_rb.position.z>_killAtMaxZ)
             Destroy(this.gameObject);
     }
     private void OnCollisionEnter(Collision collision)
