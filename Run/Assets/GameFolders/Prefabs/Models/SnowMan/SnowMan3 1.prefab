@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2249000382230867925}
+  - component: {fileID: 8245066407341127312}
   m_Layer: 0
   m_Name: SnowMan3 1
   m_TagString: Untagged
@@ -35,6 +36,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 68.22, y: 180, z: 0}
+--- !u!136 &8245066407341127312
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476579528521741679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 2.149576
+  m_Height: 4.2991524
+  m_Direction: 1
+  m_Center: {x: -0.00000015259714, y: 2.1005864, z: 0.10425282}
 --- !u!1 &1698875596096070685
 GameObject:
   m_ObjectHideFlags: 0

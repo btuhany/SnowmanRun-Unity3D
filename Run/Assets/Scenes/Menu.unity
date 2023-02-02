@@ -401,6 +401,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dayNightCycleSpeed: 0.5
+--- !u!114 &346752592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1080886883335867666, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+  m_PrefabInstance: {fileID: 781579365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d6958f3a59fc744869f2793af30d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &386949682
 GameObject:
   m_ObjectHideFlags: 0
@@ -10635,6 +10646,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1975530439409372003, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 346752592}
+    - target: {fileID: 1975530439409372003, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HardButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975530439409372003, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398857236840308642, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 346752592}
+    - target: {fileID: 2398857236840308642, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EasyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398857236840308642, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2739867008394675286, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -10722,6 +10757,18 @@ PrefabInstance:
     - target: {fileID: 7994176869813321320, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027498384237276470, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 346752592}
+    - target: {fileID: 8027498384237276470, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NormalButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027498384237276470, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}

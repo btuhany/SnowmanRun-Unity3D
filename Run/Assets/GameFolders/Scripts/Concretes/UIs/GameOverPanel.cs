@@ -6,7 +6,7 @@ public class GameOverPanel : MonoBehaviour
 {
     public void YesButton()
     {
-        GameManager.Instance.LoadScene("Game");
+        GameManager.Instance.ReLoadScene();
     }
     public void NoButton()
     {

@@ -6,12 +6,13 @@ public class SkyBoxManager : MonoBehaviour
 {
 
     [SerializeField] float _dayNightCycleSpeed;
+    [SerializeField] float _initalSkyBoxTransition;
     float _transitionValue;
     bool IsNight;
 
     private void Start()
     {
-        RenderSettings.skybox.SetFloat("_CubemapTransition", _transitionValue);
+        RenderSettings.skybox.SetFloat("_CubemapTransition", _initalSkyBoxTransition);
     }
     private void Update()
     {
