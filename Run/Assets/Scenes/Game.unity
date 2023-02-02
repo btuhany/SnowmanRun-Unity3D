@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1451422754246630840, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: _followSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1451422755839368824, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
       propertyPath: m_Name
       value: Core

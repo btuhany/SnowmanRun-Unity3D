@@ -38,7 +38,7 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
         if(_maxHealth<=0)
         {
             _maxHealth = 0;
-            Time.timeScale = 0.1f;
+            GameManager.Instance.GameOver();
         }
             
     }

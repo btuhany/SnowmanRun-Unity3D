@@ -4816,8 +4816,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5359210566057068505}
   - component: {fileID: 3547019669323022643}
-  - component: {fileID: 1564134663614728018}
   - component: {fileID: 7294459142563060728}
+  - component: {fileID: 1322501812193808456}
   m_Layer: 0
   m_Name: SnowBallBig
   m_TagString: Untagged
@@ -4861,19 +4861,6 @@ MonoBehaviour:
   _maxEnemyDestroyLimit: 99
   _killAtMaxZ: 180
   IsBig: 1
---- !u!135 &1564134663614728018
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3644033553648923824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.126149
-  m_Center: {x: 0, y: 1.1183712, z: 0.4922223}
 --- !u!54 &7294459142563060728
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4890,6 +4877,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 118
   m_CollisionDetection: 0
+--- !u!65 &1322501812193808456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644033553648923824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9489336, y: 9.21943, z: 1}
+  m_Center: {x: 0.31486273, y: 1.4347944, z: 0}
 --- !u!1 &4242442073344923345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9639,13 +9639,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearBehavior: 1
   cameraShake:
-    enabled: 0
+    enabled: 1
     useMainCamera: 1
     cameras: []
     delay: 0
     duration: 1
     shakeSpace: 0
-    shakeStrength: {x: 0.1, y: 0.1, z: 0.1}
+    shakeStrength: {x: 0.2, y: 0.2, z: 0.15}
     shakeCurve:
       serializedVersion: 2
       m_Curve:
