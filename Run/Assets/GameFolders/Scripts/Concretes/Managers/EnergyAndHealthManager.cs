@@ -7,10 +7,17 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     [SerializeField] int _maxEnergy;
     [SerializeField] int _minEnergyToFire;
     [SerializeField] int _maxHealth;
+    [SerializeField] int _invulnerableTime;
     float _currentEnergy = 0;
+    private bool _invulnerable;
     public bool IsEnergyFull => _currentEnergy >= _maxEnergy;
     public bool IsDead => _maxHealth <= 0;
     public bool IsThereEnergy => _currentEnergy >= _minEnergyToFire;
+
+    public int MaxEnergy { get => _maxEnergy; set => _maxEnergy = value; }
+    public float CurrentEnergy { get => _currentEnergy; set => _currentEnergy = value; }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+
     private void Awake()
     {
         SingletonThisObject(this);
@@ -34,12 +41,22 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     }
     public void DecreaseHealth(int health)
     {
+        if (_invulnerable) return;
         _maxHealth -= health;
-        if(_maxHealth<=0)
+        if (_maxHealth<=0)
         {
             _maxHealth = 0;
             GameManager.Instance.GameOver();
         }
-            
+        else
+        {
+            StartCoroutine(HealthCoolDown());
+        }
+    }
+    IEnumerator HealthCoolDown()
+    {
+        _invulnerable = true;
+        yield return new WaitForSeconds(_invulnerableTime);
+        _invulnerable = false;
     }
 }
