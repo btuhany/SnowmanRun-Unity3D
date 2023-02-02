@@ -2525,8 +2525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 517, y: -330}
-  m_SizeDelta: {x: 1092, y: 212.0867}
+  m_AnchoredPosition: {x: 348, y: -254}
+  m_SizeDelta: {x: 1216.6494, y: 270.1788}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1807975660
 CanvasRenderer:
@@ -2556,7 +2556,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A,D to move, S to roll, Space to jump, F to snowball, Esc to gameover
+  m_text: '
+
+    You need to fully fill  your energy bar to fire a portal destroyer
+    snowball !!
+
+    A,D to move, S to roll, Space to jump, F to snowball, Esc to
+    gameover
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 968dd410ab233484b85023bc02aafc32, type: 2}
   m_sharedMaterial: {fileID: -3736333176343031605, guid: 968dd410ab233484b85023bc02aafc32, type: 2}
@@ -2583,12 +2591,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 90
+  m_fontSizeMax: 70
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096

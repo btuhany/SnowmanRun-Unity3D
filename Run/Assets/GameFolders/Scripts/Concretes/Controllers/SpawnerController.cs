@@ -12,10 +12,9 @@ public class SpawnerController : Lines
     float _randomSpawnTime;
     float _currentSpawnTime;
 
-    int _spawnVariationIndex;
-    float _spawnVariationTime;
 
-    public bool IsSpawnIndexExceeded => _spawnVariationIndex >= 5;
+
+
     private void OnEnable()
     {
         SetLine(_lineNumber);
@@ -31,13 +30,9 @@ public class SpawnerController : Lines
             GetRandomSpawnTime();
         }
 
-        if (IsSpawnIndexExceeded) return;
+      
         
-        if (_spawnVariationTime < Time.time)
-        {
-            _spawnVariationTime = Time.time + SpawnerManager.Instance.SpawnVariationDelay;
-            _spawnVariationIndex++;
-        }
+ 
       
 
     }

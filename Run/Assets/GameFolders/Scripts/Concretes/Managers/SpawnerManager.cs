@@ -10,8 +10,7 @@ public class SpawnerManager : SingletonMonoBehaviour<SpawnerManager>
     //[SerializeField] int _shortCubeObstacleLimit;
     //[SerializeField] int _energySphereCubeObstacleLimit;
     [SerializeField] int[] _obstacleLimits = new int[8];
-    [SerializeField] float _spawnVariationDelay;
-    public float SpawnVariationDelay { get => _spawnVariationDelay; }
+  
 
     Dictionary<ObstacleType, int> _obstacleNumbers = new Dictionary<ObstacleType, int>();
  

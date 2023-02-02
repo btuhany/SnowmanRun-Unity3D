@@ -774,23 +774,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755498, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: _obstacleLimits.Array.data[0]
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755498, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: _obstacleLimits.Array.data[1]
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755498, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: _obstacleLimits.Array.data[2]
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755498, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: _obstacleLimits.Array.data[3]
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755498, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: _obstacleLimits.Array.data[4]
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5766110563590755499, guid: d408e69d0c532d046910712bf521cac3, type: 3}
       propertyPath: m_Name
