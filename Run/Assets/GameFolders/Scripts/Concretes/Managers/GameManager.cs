@@ -19,7 +19,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         Application.Quit();
     }
-    
+    public void LoadScene()
+    {
+        
+    }
+    public void GameOver()
+    {
+        throw new NotImplementedException();
+    }
     public void PortalDestroyed()
     {
         _portalNumber--;
@@ -27,8 +34,4 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             GameOver();
     }
 
-    public void GameOver()
-    {
-        throw new NotImplementedException();
-    }
 }
