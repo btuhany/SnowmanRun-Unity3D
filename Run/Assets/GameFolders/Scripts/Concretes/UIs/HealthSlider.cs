@@ -22,6 +22,6 @@ public class HealthSlider : MonoBehaviour
     private void Update()
     {
         _slider.value = EnergyAndHealthManager.Instance.MaxHealth;
-        _textMesh.SetText("HEALTH: " + _slider.value.ToString() + "/" + _healthAtMax.ToString());
+        _textMesh.SetText("LIVE: " + _slider.value.ToString() + "/" + _healthAtMax.ToString());
     }
 }

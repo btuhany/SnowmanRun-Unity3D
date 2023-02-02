@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.082812294, g: 0.1800948, b: 0.49344426, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1637979137, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1738965035, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -145,26 +141,6 @@ PrefabInstance:
     - target: {fileID: 2863654465382728836, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_Name
       value: InGameCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228726376717807397, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_Color.a
-      value: 0.35686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1775.9489
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -937.5493
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 820
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -408
       objectReference: {fileID: 0}
     - target: {fileID: 8019025915523235514, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_Pivot.x
@@ -515,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1451422755580260814, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
       propertyPath: _moveSpeed
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1451422755839368824, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
       propertyPath: m_Name
