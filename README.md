@@ -1,2 +1,2 @@
 # EndlessRunner-Unity3D
-An "endless runner" game
+https://btuhan.itch.io/snowman-run
