@@ -39,27 +39,27 @@ public class SpawnerController : Lines
 
     private void Spawn()
     {
-        int randNum = Random.Range(0, 100);
+        int randNum = Random.Range(0, 101);
         int randIndex = 0; // Random.Range(0, _spawnVariationIndex);
-        if (randNum<100 && randNum>=70)
+        if (randNum<100 && randNum>=87)   
         {
-            randIndex = 4;
+            randIndex = 4;   //sphere %13
         }
-        else if(randNum>= 48)
+        else if(randNum>= 58)
         {
-            randIndex = 1;
+            randIndex = 1;  // roll cube %29
         }
-        else if(randNum>=25)
+        else if(randNum>=28)
         {
-            randIndex = 0;
+            randIndex = 0;  //jump cube %30
         }
         else if(randNum>= 10)
         {
-            randIndex = 3;
+            randIndex = 3;   //short cube
         }
         else
         {
-            randIndex = 2;
+            randIndex = 2;  //long cube
         }
         
 
