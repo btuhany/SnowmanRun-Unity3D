@@ -48,6 +48,11 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     {
         _currentEnergy = 0f;
     }
+    public void SetMaxHealthAndMaxEnergy(int health, int energy)
+    {
+        _maxHealth = health;
+        _maxEnergy = energy;
+    }
     public void DecreaseHealth(int health)
     {
         if (_invulnerable) return;

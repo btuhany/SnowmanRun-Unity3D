@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverPanel : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameOverPanel : MonoBehaviour
     }
     public void NoButton()
     {
-        GameManager.Instance.LoadScene("Menu");
+
+        Application.Quit();
+       // GameManager.Instance.LoadScene("Menu");
     }
 }

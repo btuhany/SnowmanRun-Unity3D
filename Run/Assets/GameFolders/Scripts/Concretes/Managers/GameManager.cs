@@ -34,6 +34,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void LoadScene(string sceneName)
     {
+        
         ResetScene();
         StartCoroutine(LeadSceneAsync(sceneName)); 
     }
