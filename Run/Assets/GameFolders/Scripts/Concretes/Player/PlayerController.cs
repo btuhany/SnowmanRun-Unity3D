@@ -99,10 +99,12 @@ public class PlayerController : Lines
         }
         if(Input.GetKeyDown(KeyCode.F) && EnergyAndHealthManager.Instance.IsThereEnergy)
         {
+
             if (EnergyAndHealthManager.Instance.IsEnergyFull)
                 ThrowSnowBall(2);
             else
                 ThrowSnowBall(1);
+            _anim.SetTrigger("IsFire");
         }
         if (_input.MoveDown && !_input.Jump)
         {
