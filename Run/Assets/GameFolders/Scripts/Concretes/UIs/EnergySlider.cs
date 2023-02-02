@@ -21,6 +21,6 @@ public class EnergySlider : MonoBehaviour
     private void Update()
     {
         _slider.value = EnergyAndHealthManager.Instance.CurrentEnergy;
-        _textMesh.SetText("SNOWBALL ENERGY: " + _slider.value.ToString() + "/" + _slider.maxValue.ToString());
+        _textMesh.SetText("ENERGY: " + _slider.value.ToString() + "/" + _slider.maxValue.ToString());
     }
 }

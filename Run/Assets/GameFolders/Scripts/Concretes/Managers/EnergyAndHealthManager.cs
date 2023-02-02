@@ -8,6 +8,7 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     [SerializeField] int _minEnergyToFire;
     [SerializeField] int _maxHealth;
     [SerializeField] int _invulnerableTime;
+    int _liveAtStart;
     float _currentEnergy = 0;
     private bool _invulnerable;
     public bool IsEnergyFull => _currentEnergy >= _maxEnergy;
@@ -21,6 +22,10 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     private void Awake()
     {
         SingletonThisObject(this);
+    }
+    private void Start()
+    {
+        _liveAtStart = _maxHealth;
     }
     private void Update()
     {
@@ -52,6 +57,10 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
         {
             StartCoroutine(HealthCoolDown());
         }
+    }
+    public void FillLives()
+    {
+        _maxHealth = _liveAtStart;
     }
     IEnumerator HealthCoolDown()
     {
