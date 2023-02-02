@@ -8,13 +8,15 @@ using UnityEngine.UIElements;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     int _portalNumber = 3;
+    public event System.Action OnGameOver;
     void Awake()
     {
         SingletonThisObject(this);
     }
-    public void StopGame()
+    public void GameOver()
     {
         Time.timeScale = 0;
+        OnGameOver?.Invoke();
     }
     public void ExitGame()
     {
@@ -26,10 +28,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         Debug.Log("hello");
         StartCoroutine(LeadSceneAsync(sceneName));
         
-    }
-    public void GameOver()
-    {
-        throw new NotImplementedException();
     }
     public void PortalDestroyed()
     {
