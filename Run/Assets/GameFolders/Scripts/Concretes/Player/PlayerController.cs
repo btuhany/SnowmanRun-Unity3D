@@ -9,6 +9,7 @@ public class PlayerController : Lines
 {
     [SerializeField] SnowballController snowBall;
     [SerializeField] SnowballController snowBallBig;
+    
     [SerializeField] float jumpAndRollForce;
     Movement _move;
     InputReader _input;
@@ -99,12 +100,11 @@ public class PlayerController : Lines
         }
         if(Input.GetKeyDown(KeyCode.F) && EnergyAndHealthManager.Instance.IsThereEnergy)
         {
-
-            if (EnergyAndHealthManager.Instance.IsEnergyFull)
-                ThrowSnowBall(2);
-            else
-                ThrowSnowBall(1);
-            _anim.SetTrigger("IsFire");
+            UseEnergy();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.GameOver();
         }
         if (_input.MoveDown && !_input.Jump)
         {
@@ -136,6 +136,14 @@ public class PlayerController : Lines
             _moveRight = false;
 
         }      
+    }
+    private void UseEnergy()
+    {
+        if (EnergyAndHealthManager.Instance.IsEnergyFull)
+            ThrowSnowBall(2);
+        else
+            ThrowSnowBall(1);
+        _anim.SetTrigger("IsFire");
     }
     private void ThrowSnowBall(int snowBallNumber)
     {

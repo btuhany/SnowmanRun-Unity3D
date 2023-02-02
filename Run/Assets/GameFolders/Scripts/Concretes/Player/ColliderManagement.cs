@@ -9,6 +9,7 @@ public class ColliderManagement : MonoBehaviour
     [SerializeField] Vector3 _jumpColliderSize;
     [SerializeField] Vector3 _rollColliderCenter;
     [SerializeField] Vector3 _rollColliderSize;
+    [SerializeField] GameObject _brokenHeartFX;
     PlayerController _player;
     BoxCollider _collider;
 
@@ -32,6 +33,7 @@ public class ColliderManagement : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             // _isDead = true;
+            _brokenHeartFX.gameObject.SetActive(true);
             EnergyAndHealthManager.Instance.DecreaseHealth(1);
         }
         if (collision.gameObject.tag == "energy")

@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1637979137, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1738965035, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -141,6 +145,26 @@ PrefabInstance:
     - target: {fileID: 2863654465382728836, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_Name
       value: InGameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4228726376717807397, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_Color.a
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1775.9489
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -937.5493
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 820
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033563901452629859, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -408
       objectReference: {fileID: 0}
     - target: {fileID: 8019025915523235514, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
       propertyPath: m_Pivot.x
@@ -228,6 +252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a904e4fa76002df4eaf4a3386fef3637, type: 3}
+--- !u!1 &659136462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8293710054783394610, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+  m_PrefabInstance: {fileID: 1451422754629955789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &688988165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,6 +358,26 @@ PrefabInstance:
       propertyPath: _followSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1451422754246630841, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451422754246630841, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451422754246630841, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9886255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451422754246630841, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15039815
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451422754246630841, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 17.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1451422755839368824, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
       propertyPath: m_Name
       value: Core
@@ -376,6 +425,46 @@ PrefabInstance:
     - target: {fileID: 1451422755839368827, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394609, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394609, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394609, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394609, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394610, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394615, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394615, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394615, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.40865815
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394615, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3339622
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293710054783394615, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 408bd7ad4f1b6cd42be3ee1f314770a6, type: 3}
@@ -557,6 +646,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7883843045437013432, guid: d96cd1f15ba475e448e24acc3d6f8dc1, type: 3}
+      propertyPath: _brokenHeartFX
+      value: 
+      objectReference: {fileID: 659136462}
     - target: {fileID: 7883843045437013432, guid: d96cd1f15ba475e448e24acc3d6f8dc1, type: 3}
       propertyPath: _invulnerableTime
       value: 1
