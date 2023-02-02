@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - energy
   - spawner
+  - patrol
   layers:
   - Default
   - TransparentFX

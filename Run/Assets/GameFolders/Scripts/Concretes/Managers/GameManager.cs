@@ -34,13 +34,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void LoadScene(string sceneName)
     {
-        _portalNumber = 3;
-        EnergyAndHealthManager.Instance.FillLives();
-        EnergyAndHealthManager.Instance.ResetEnergy();
+        ResetScene();
         StartCoroutine(LeadSceneAsync(sceneName)); 
     }
     public void ReLoadScene()
     {
+        ResetScene();
         StartCoroutine(ReLoadLevelSceneAsync());
     }
     public void PortalDestroyed()
@@ -51,11 +50,19 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     private IEnumerator ReLoadLevelSceneAsync()
     {
+        Time.timeScale = 1f;
         yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
     private IEnumerator LeadSceneAsync(string sceneName)
     {
         Time.timeScale = 1f;
         yield return SceneManager.LoadSceneAsync(sceneName);
+    }
+    void ResetScene()
+    {
+        _portalNumber = 3;
+        EnergyAndHealthManager.Instance.FillLives();
+        EnergyAndHealthManager.Instance.ResetEnergy();
+        EnergyAndHealthManager.Instance.IncreaseEnergy(1);
     }
 }

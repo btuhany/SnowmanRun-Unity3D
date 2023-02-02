@@ -29,8 +29,14 @@ public class ColliderManagement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ObstacleController obstacle = collision.gameObject.GetComponent<ObstacleController>();
+        if (collision.gameObject.tag == "patrol")
+        {
+            // _isDead = true;
+            _brokenHeartFX.gameObject.SetActive(true);
+            EnergyAndHealthManager.Instance.DecreaseHealth(1);
+        }
         if (obstacle == null) return;
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "patrol")
         {
             // _isDead = true;
             _brokenHeartFX.gameObject.SetActive(true);

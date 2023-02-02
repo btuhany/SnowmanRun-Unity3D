@@ -34,7 +34,7 @@ public class SnowballController : MonoBehaviour
         if (IsBig && collision.gameObject.tag == "spawner")
         {
             
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             Destroy(gameObject);
             GameManager.Instance.PortalDestroyed();
         }
