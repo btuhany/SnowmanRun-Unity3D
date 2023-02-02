@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -17,10 +18,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void ExitGame()
     {
+        Debug.Log("Exit clicked");
         Application.Quit();
     }
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
+        Debug.Log("hello");
+        StartCoroutine(LeadSceneAsync(sceneName));
         
     }
     public void GameOver()
@@ -33,5 +37,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         if (_portalNumber == 0)
             GameOver();
     }
-
+    private IEnumerator LeadSceneAsync(string sceneName)
+    {
+        Time.timeScale = 1f;
+        yield return SceneManager.LoadSceneAsync(sceneName);
+    }
 }
