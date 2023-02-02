@@ -44,15 +44,38 @@ public class SpawnerController : Lines
 
     private void Spawn()
     {
-        int randomNumber = Random.Range(0, _spawnVariationIndex);
-        ObstacleType obstacle = (ObstacleType)randomNumber;
+        int randNum = Random.Range(0, 100);
+        int randIndex = 0; // Random.Range(0, _spawnVariationIndex);
+        if (randNum<100 && randNum>=70)
+        {
+            randIndex = 4;
+        }
+        else if(randNum>= 48)
+        {
+            randIndex = 1;
+        }
+        else if(randNum>=25)
+        {
+            randIndex = 0;
+        }
+        else if(randNum>= 10)
+        {
+            randIndex = 3;
+        }
+        else
+        {
+            randIndex = 2;
+        }
+        
+
+        ObstacleType obstacle = (ObstacleType)randIndex;
         if (!SpawnerManager.Instance.CanSpawn(obstacle))
         {
             Debug.Log("returned");
             return;
             
         }
-        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)randomNumber);
+        ObstacleController newObs = ObstaclePoolManager.Instance.GetPool((ObstacleType)randIndex);
         newObs.transform.parent = this.transform;
         newObs.transform.position = this.transform.position + _spawnOffset;
         newObs.gameObject.SetActive(true);

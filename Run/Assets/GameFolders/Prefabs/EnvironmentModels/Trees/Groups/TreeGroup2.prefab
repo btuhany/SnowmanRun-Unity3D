@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
       propertyPath: _moveSpeed
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 703022789878306640, guid: 32df7cf9154b56d4b9456e788e9b9cf3, type: 3}
       propertyPath: _obstacleType

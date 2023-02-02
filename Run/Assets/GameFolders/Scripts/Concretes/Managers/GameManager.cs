@@ -36,7 +36,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         _portalNumber = 3;
         EnergyAndHealthManager.Instance.FillLives();
-        EnergyAndHealthManager.Instance.DecreaseEnergy(99);
+        EnergyAndHealthManager.Instance.ResetEnergy();
         StartCoroutine(LeadSceneAsync(sceneName));
         
     }

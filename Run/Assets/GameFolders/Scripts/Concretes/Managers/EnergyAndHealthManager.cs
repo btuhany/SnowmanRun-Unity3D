@@ -44,6 +44,10 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
         if(_currentEnergy<0)
             _currentEnergy=0;
     }
+    public void ResetEnergy()
+    {
+        _currentEnergy = 0f;
+    }
     public void DecreaseHealth(int health)
     {
         if (_invulnerable) return;

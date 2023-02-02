@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _moveSpeed: 30
-  _minZ: -7
+  _moveSpeed: 13.7
+  _minZ: -25
   _isDecore: 0
 --- !u!65 &1883390236809311024
 BoxCollider:
@@ -77,5 +77,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 114
   m_CollisionDetection: 1

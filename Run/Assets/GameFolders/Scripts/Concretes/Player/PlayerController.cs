@@ -147,17 +147,16 @@ public class PlayerController : Lines
     }
     private void ThrowSnowBall(int snowBallNumber)
     {
-        Vector3 tempVect = new Vector3(transform.position.x, transform.position.y + 2.6f, transform.position.z + 0.7f);
+        Vector3 tempVect = new Vector3(transform.position.x, transform.position.y + 1.6f, transform.position.z + 5f);
         if (snowBallNumber == 1)
-        {
-            
+        {   
             Instantiate(snowBall, tempVect, transform.rotation);
-            EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+            EnergyAndHealthManager.Instance.DecreaseEnergy(1);
         }
         else if(snowBallNumber ==2)
         {
             Instantiate(snowBallBig, tempVect, transform.rotation);
-            EnergyAndHealthManager.Instance.DecreaseEnergy(2);
+            EnergyAndHealthManager.Instance.ResetEnergy();
         }
     }
     

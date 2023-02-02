@@ -14,7 +14,7 @@ public abstract class Lines : MonoBehaviour
         Vector3.right*_lineDistance,
     };
 
-    protected bool IsInLine { get => transform.position.x == GetLine().x; }
+    protected bool IsInLine { get => transform.position.x > GetLine().x - 0.01 && transform.position.x < GetLine().x + 0.01; }
 
     protected void LineIncrease()
     {

@@ -4857,7 +4857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f24753d309e6347918bdb3d6e77b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 50
+  _moveSpeed: 45
   _maxEnemyDestroyLimit: 99
   _killAtMaxZ: 180
   IsBig: 1
@@ -4888,8 +4888,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9489336, y: 9.21943, z: 1}
-  m_Center: {x: 0.31486273, y: 1.4347944, z: 0}
+  m_Size: {x: 2.4406986, y: 9.21943, z: 1}
+  m_Center: {x: 0.15000552, y: 1.4347944, z: 0}
 --- !u!1 &4242442073344923345
 GameObject:
   m_ObjectHideFlags: 0
