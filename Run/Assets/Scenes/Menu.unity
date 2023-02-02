@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dayNightCycleSpeed: 0.5
+  _initalSkyBoxTransition: 0
 --- !u!114 &346752592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1080886883335867666, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
@@ -10646,6 +10647,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 581723425, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
+      propertyPath: m_text
+      value: '- You need to stop the portals in order to reach him.
+
+        - To
+        stop them , collect ice balls to fill your energy than fire your snowballs
+        to the portals.
+
+        - You need to fully fill  your energy bar to fire
+        a portal destroyer snowball !!
+
+        - You can also spend one energy to
+        fire a single shot snowball.
+
+        - Lookout for enemy patrol after closing
+        the portal!
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1975530439409372003, guid: c67bf92d1b8778a44a40cf4e03f0bc0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
