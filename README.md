@@ -1,16 +1,16 @@
 # EndlessRunner-Unity3D
-https://btuhan.itch.io/snowman-run
-This is an endless runner type game which is not actually.
+https://btuhan.itch.io/snowman-run <br>
+This is an endless runner type game which is not actually. <br>
 I want to give a purpose to the player. Main purpose is to destroy the obstacle spawners in order to complete the level/game. <br> 
 While players are running and avoiding obstacles, they can shoot/fire snowballs to the obstacles and destroy them. To shoot/fire, they should have energy in their energy bar.Energy can be collected from the ice balls. <br> 
 If their energy bar isn't full they can only shoot a normal snowball which can only destroy one obstacle and consumes just one energy.<br>
-If their energy bar is full, in that case they can only shoot a big snowball which destroys the every obstacle in the way and the spawner portal it touches with and it consumes the all energy. 
+If their energy bar is full, in that case they can only shoot a big snowball which destroys the every obstacle in the way and the spawner portal it touches with and it consumes the all energy. <br>
 After the destroying the portal, a different enemy type (patrolling snowman heads) spawn from it and they start the move back and forth in the line of which portal was destroyed. It helps to keep the flow of energy of the game to the end of it. <br>
-Player has lives so he/she doesn't  die immediately. 
-Player has three movement control <br) 
+Player has lives so he/she doesn't  die immediately. <br>
+Player has three movement control <br>
 - changing line 
 - jumping
-- rolling.
+- rolling. <br>
 There are four type obstacles <br>
 - small obstacles for player to jump
 - obstacles that can only overcome with the rolling
