@@ -27,11 +27,11 @@ public class EnergyAndHealthManager : SingletonMonoBehaviour<EnergyAndHealthMana
     {
         _liveAtStart = _maxHealth;
     }
-    private void Update()
-    {
-        Debug.Log("Energy: " + _currentEnergy);
-        Debug.Log("Health: " +_maxHealth);
-    }
+    //private void Update()
+    //{
+    //    Debug.Log("Energy: " + _currentEnergy);
+    //    Debug.Log("Health: " +_maxHealth);
+    //}
     public void IncreaseEnergy(int energy)
     {
         _currentEnergy+= energy;
