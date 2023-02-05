@@ -23,4 +23,6 @@ Player has three movement control
 
 There are easy, normal and hard difficulty selections. 
 
-
+<img src="refimages/1.JPG" width="500" ><img src="refimages/2.JPG" width="500" >
+<img src="refimages/3.JPG" width="500" ><img src="refimages/4.JPG" width="500" >
+<img src="refimages/5.JPG" width="500" ><img src="refimages/6.JPG" width="500" >
